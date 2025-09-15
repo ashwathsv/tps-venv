@@ -119,6 +119,10 @@ make install
 cd $ROOT_DIR
 export MFEM_DIR=$mfem_prefix
 
+cp /home1/apps/gcc14/openmpi5/phdf5/1.14.6/include/*.h $INSTALL_DIR/include
+cp /home1/apps/gcc14/openmpi5/phdf5/1.14.6/lib/*.so $INSTALL_DIR/lib
+cp /home1/apps/gcc14/openmpi5/phdf5/1.14.6/lib/*.so* $INSTALL_DIR/lib
+
 cd $INSTALL_DIR
 echo export MASA_DIR=$MASA_DIR > export_env
 echo export BOOST_DIR=$BOOST_DIR >> export_env
@@ -127,7 +131,7 @@ echo export GSLIB_DIR=$GSLIB_DIR >> export_env
 echo export HYPRE_DIR=$HYPRE_DIR >> export_env
 echo export METIS_DIR=$METIS_DIR >> export_env
 echo export MFEM_DIR=$MFEM_DIR >> export_env
-echo export HDF5_DIR=$HDF5_DIR >> export_env
+echo export HDF5_DIR=$TACC_HDF5_DIR >> export_env
 echo export CUDA_HOME=$TACC_CUDA_DIR >> export_env
 echo export cuda_arch=$cuda_arch >> export_env
 echo export EXTRA_LD_LIBRARY_PATH=$INSTALL_DIR/lib >> export_env

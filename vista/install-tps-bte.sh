@@ -9,19 +9,19 @@ source tps-env/export_env
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$EXTRA_LD_LIBRARY_PATH
 
 TPS_DIR=$ROOT_DIR/tps
-# git clone git@github.com:pecos/tps.git
-# cd $TPS_DIR && git checkout boltzmann-integration
+git clone git@github.com:pecos/tps.git
+cd $TPS_DIR && git checkout lowmach-bte-bindings
 
-# git clone git@github.com:ut-padas/boltzmann.git
-# git clone git@github.com:pecos/tps-inputs.git
-# cd tps-inputs && git checkout boltzmann-integration
+git clone git@github.com:ut-padas/boltzmann.git
+git clone git@github.com:pecos/tps-inputs.git
+cd tps-inputs && git checkout lowmach-bte-bindings
 
 cd $TPS_DIR
 git branch 
 ./bootstrap
 mkdir -p build-cpu-low-mach
 cd build-cpu-low-mach
-../configure CC=mpicc CXX=mpicxx --disable-valgrind --enable-pybind11 CPPFLAGS=-I$(python3 -c "import pybind11; print(pybind11.get_include())")
+../configure CC=mpicc CXX=mpicxx --disable-valgrind --enable-pybind11 CPPFLAGS="-DPyMPI_HAVE_MPI_Session -I$(python3 -c "import pybind11; print(pybind11.get_include())")"
 
 # mkdir build-gpu
 # cd build-gpu

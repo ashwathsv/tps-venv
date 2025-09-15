@@ -19,13 +19,13 @@ uv pip install numpy scipy sympy matplotlib cupy-cuda12x numba multiprocess "pyb
 CFLAGS=-noswitcherror uv pip install mpi4py
 uv pip install h5py
 
-# MPICC=$(command -v mpicc)
-# MPICXX=$(command -v mpicxx)
-# cd $WDIR
-# wget https://github.com/mpi4py/mpi4py/releases/download/$mpi4py_ver/mpi4py-$mpi4py_ver.tar.gz \
-# && rm -rf  mpi4py-$mpi4py_ver && tar -zxf mpi4py-$mpi4py_ver.tar.gz && cd mpi4py-$mpi4py_ver \
-# && python setup.py build --mpicc=$MPICC && python setup.py install
-# cd $ROOT_DIR
+#MPICC=$(command -v mpicc)
+#MPICXX=$(command -v mpicxx)
+#cd $WDIR
+#wget https://github.com/mpi4py/mpi4py/releases/download/$mpi4py_ver/mpi4py-$mpi4py_ver.tar.gz \
+#&& rm -rf  mpi4py-$mpi4py_ver && tar -zxf mpi4py-$mpi4py_ver.tar.gz && cd mpi4py-$mpi4py_ver \
+#&& python setup.py build --mpicc=$MPICC && python setup.py install
+#cd $ROOT_DIR
 
 python -c "import cupy"
 python -c "import mpi4py"

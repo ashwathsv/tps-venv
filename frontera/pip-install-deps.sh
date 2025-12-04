@@ -3,7 +3,7 @@ WDIR=$(pwd)
 python --version
 pip install --upgrade pip
 pip install cython psutil scikit-build nvtx
-pip install numpy scipy  matplotlib cupy-cuda12x numba multiprocess "pybind11[global]" lxcat_data_parser sympy
+pip install numpy scipy  matplotlib cupy-cuda12x numba multiprocess "pybind11[global]" lxcat_data_parser sympy findiff
 pip install h5py
 
 MPICC=$(command -v mpicc)

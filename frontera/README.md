@@ -7,7 +7,7 @@ To create a virtual enviroment do the following:
 source load_modules.sh
 mkdir tps-venv
 cd tps-venv/
-python3 -m venv --system-site-packages .
+python3 -m venv .
 source bin/activate
 ```
 
@@ -32,7 +32,8 @@ with chaning your working directory to `tps-venv`
 ### Install tps + boltzmann + tps-inputs
 
 You would need access to tps, bte, and tps-intputs repos.
-
+Verify that the system site packages are not installed
+You can do this by confirming include-system-site-packages = false in the pyvenv.cfg file
 ```
 source ../install-tps-bte.sh
 ```

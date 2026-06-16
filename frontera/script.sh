@@ -1,7 +1,7 @@
 #!/bin/bash -x
 INSTALL_DIR=$(pwd)
 WDIR=$INSTALL_DIR/build
-make_cores=16
+make_cores=32
 cuda_arch_number=75
 
 source bin/activate
@@ -58,7 +58,7 @@ cd metis-5.1.0 && \
     make -j ${make_cores} && make install
 cd $WDIR
 
-mfem_ver="4.5.2"
+mfem_ver="4.8"
 mfem_prefix=$INSTALL_DIR
 wget https://github.com/mfem/mfem/archive/refs/tags/v$mfem_ver.tar.gz && tar xvf v$mfem_ver.tar.gz
 
@@ -85,9 +85,9 @@ cd $WDIR
 
 export MFEM_DIR=$mfem_prefix
 
-cp /opt/apps/gcc9_1/impi19_0/phdf5/1.10.4/x86_64/include/*.h $INSTALL_DIR/include
-cp /opt/apps/gcc9_1/impi19_0/phdf5/1.10.4/x86_64/lib/*.so $INSTALL_DIR/lib
-cp /opt/apps/gcc9_1/impi19_0/phdf5/1.10.4/x86_64/lib/*.so* $INSTALL_DIR/lib
+cp /home1/apps/gcc9_1/impi19_0/phdf5/1.14.6/include/*.h $INSTALL_DIR/include
+cp /home1/apps/gcc9_1/impi19_0/phdf5/1.14.6/lib/*.so $INSTALL_DIR/lib
+cp /home1/apps/gcc9_1/impi19_0/phdf5/1.14.6/lib/*.so* $INSTALL_DIR/lib
 
 cd $INSTALL_DIR
 echo export MASA_DIR=$MASA_DIR > export_env
